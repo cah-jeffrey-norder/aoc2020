@@ -68,11 +68,12 @@ public class DayThree {
                 }
                 widthIndex += 1;
             }
-            BigInteger answer = new BigInteger(String.valueOf(a));
-            answer = answer.multiply(new BigInteger(String.valueOf(b)));
-            answer = answer.multiply(new BigInteger(String.valueOf(c)));
-            answer = answer.multiply(new BigInteger(String.valueOf(d)));
-            answer = answer.multiply(new BigInteger(String.valueOf(e)));
+
+            int[] array = new int[] {b,c,d,e};
+            BigInteger answer = BigInteger.valueOf(a);
+            for (int i : array) {
+                answer = answer.multiply(BigInteger.valueOf(i));
+            }
             System.out.println(answer);
         } catch (Exception ex) {
             System.out.println(ex);
